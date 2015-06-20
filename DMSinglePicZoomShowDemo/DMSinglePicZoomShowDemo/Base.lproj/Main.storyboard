@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ND-4S-u0g" customClass="DMSinglePicZoomShow">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="1.jpg"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxScale">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minScale">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curScale">
+                                        <real key="value" value="0.59999999999999998"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doubleClickEnable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clickEnable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="longPressEnable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="p3v-jv-E8i"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6ND-4S-u0g" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="I2t-z5-XNZ"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="6ND-4S-u0g" secondAttribute="bottom" id="kiK-Mp-9xh"/>
+                            <constraint firstItem="6ND-4S-u0g" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="tRO-7I-lYR"/>
+                            <constraint firstAttribute="trailing" secondItem="6ND-4S-u0g" secondAttribute="trailing" id="yXX-Mn-veh"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="6ND-4S-u0g"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="I2t-z5-XNZ"/>
+                                <exclude reference="tRO-7I-lYR"/>
+                                <exclude reference="yXX-Mn-veh"/>
+                                <exclude reference="kiK-Mp-9xh"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="6ND-4S-u0g"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="I2t-z5-XNZ"/>
+                                <include reference="tRO-7I-lYR"/>
+                                <include reference="yXX-Mn-veh"/>
+                                <include reference="kiK-Mp-9xh"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="m_zoomView" destination="6ND-4S-u0g" id="8v3-w7-RwK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="1.jpg" width="533" height="800"/>
+    </resources>
+</document>
