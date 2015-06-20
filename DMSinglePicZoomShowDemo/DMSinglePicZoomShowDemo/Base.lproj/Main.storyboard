@@ -21,7 +21,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="1.jpg"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="maxScale">
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
@@ -34,6 +33,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="doubleClickEnable" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clickEnable" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="longPressEnable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="imageUrlString" value="http://f.hiphotos.baidu.com/image/pic/item/c75c10385343fbf2c7557f22b27eca8065388fb2.jpg"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="p3v-jv-E8i"/>
@@ -52,10 +52,10 @@
                                 <exclude reference="6ND-4S-u0g"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="kiK-Mp-9xh"/>
                                 <exclude reference="I2t-z5-XNZ"/>
                                 <exclude reference="tRO-7I-lYR"/>
                                 <exclude reference="yXX-Mn-veh"/>
-                                <exclude reference="kiK-Mp-9xh"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -63,10 +63,10 @@
                                 <include reference="6ND-4S-u0g"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="kiK-Mp-9xh"/>
                                 <include reference="I2t-z5-XNZ"/>
                                 <include reference="tRO-7I-lYR"/>
                                 <include reference="yXX-Mn-veh"/>
-                                <include reference="kiK-Mp-9xh"/>
                             </mask>
                         </variation>
                     </view>
@@ -78,7 +78,4 @@
             </objects>
         </scene>
     </scenes>
-    <resources>
-        <image name="1.jpg" width="533" height="800"/>
-    </resources>
 </document>

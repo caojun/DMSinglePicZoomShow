@@ -84,6 +84,9 @@ IB_DESIGNABLE
  */
 @property (nonatomic, strong) IBInspectable UIImage *image;
 
+@property (nonatomic, strong) IBInspectable UIImage *placeholderImage;
+@property (nonatomic, copy) IBInspectable NSString *imageUrlString;
+
 /**
  *  开启双击, 默认为 NO
  */
@@ -105,7 +108,10 @@ IB_DESIGNABLE
 @property (nonatomic, weak) IBOutlet id<DMSinglePicZoomShowDelegate> delegate;
 
 + (instancetype)singlePicZoomShowWithFrame:(CGRect)frame andImage:(UIImage *)image;
++ (instancetype)singlePicZoomShowWithFrame:(CGRect)frame andUrlString:(NSString *)urlString;
+
 - (instancetype)initWithFrame:(CGRect)frame andImage:(UIImage *)image;
+- (instancetype)initWithFrame:(CGRect)frame andUrlString:(NSString *)urlString;
 
 - (void)setCurScale:(CGFloat)zoomScale animated:(BOOL)animated;
 

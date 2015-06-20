@@ -23,6 +23,7 @@
  */
 
 #import "DMSinglePicZoomShow.h"
+#import "UIImageView+WebCache.h"
 
 
 #if DEBUG
@@ -43,20 +44,23 @@
 
 @implementation DMSinglePicZoomShow
 
-//@synthesize maxScale = _maxScale;
-//@synthesize minScale = _minScale;
-//@synthesize curScale = _curScale;
-
 #pragma mark - Life Cycle
 
 - (void)dealloc
 {
     DMSinglePicDebug(@"%@ dealloc", [[self class] description]);
+    
+    [self.m_imageView sd_cancelCurrentImageLoad];
 }
 
 + (instancetype)singlePicZoomShowWithFrame:(CGRect)frame andImage:(UIImage *)image
 {
     return [[self alloc] initWithFrame:frame andImage:image];
+}
+
++ (instancetype)singlePicZoomShowWithFrame:(CGRect)frame andUrlString:(NSString *)urlString
+{
+    return [[self alloc] initWithFrame:frame andUrlString:urlString];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame andImage:(UIImage *)image
@@ -65,6 +69,17 @@
     if (self)
     {
         self.image = image;
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame andUrlString:(NSString *)urlString
+{
+    self = [self initWithFrame:frame];
+    if (self)
+    {
+        self.imageUrlString = urlString;
     }
     
     return self;
@@ -185,6 +200,14 @@
     
     self.m_imageView.image = image;
     [self setNeedsLayout];
+}
+
+- (void)setImageUrlString:(NSString *)imageUrlString
+{
+    _imageUrlString = [imageUrlString copy];
+    
+    NSURL *imageUrl = [NSURL URLWithString:_imageUrlString];
+    [self.m_imageView sd_setImageWithURL:imageUrl placeholderImage:self.placeholderImage];
 }
 
 - (CGFloat)maxScale
