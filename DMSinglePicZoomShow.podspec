@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "DMSinglePicZoomShow"
   s.version      = "0.0.2"
-  s.summary      = ""
+  s.summary      = "单张图片缩放显示"
 
   s.description  = <<-DESC
                    A longer description of DMSinglePicZoomShow in Markdown format.
